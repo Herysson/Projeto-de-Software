@@ -59,6 +59,15 @@ Finalmente, discutimos as técnicas e ferramentas necessárias para o desenvolvi
 
 Encorajamos todos os alunos a contribuir para este repositório, seja atualizando documentos, adicionando exemplos ou corrigindo bugs. Veja nosso guia de contribuição para mais detalhes.
 
+## Referências
+
+- Eduardo Bezerra, *Princípios de Análise e Projeto de Sistemas com UML*
+- Craig Larman, *Utilizando UML e Padrões: Uma Introdução à Análise e ao Projeto Orientados a Objetos e ao Desenvolvimento Iterativo*
+- Raul Wazlawick, *Análise e Projetos de Sistemas de Informação Orientados a Objetos*
+- Ian Sommerville, *Engenharia de Software*
+- Michael Blaha e James Rumbaugh, *Modelagem e Projetos Baseados em Objetos com UML 2*
+- Grady Booch, James Rumbaugh e Ivar Jacobson, *UML: Guia do Usuário*
+
 ## Contato
 
 Para mais informações, contate o professor responsável Herysson R. Figueiredo através do e-mail herysson.figueiredo@ufn.edu.br.
