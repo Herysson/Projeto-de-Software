@@ -59,10 +59,6 @@ Finalmente, discutimos as técnicas e ferramentas necessárias para o desenvolvi
 
 Encorajamos todos os alunos a contribuir para este repositório, seja atualizando documentos, adicionando exemplos ou corrigindo bugs. Veja nosso guia de contribuição para mais detalhes.
 
-## Licença
-
-Este projeto é licenciado sob a Licença [Nome da Licença], que permite o uso, distribuição e reprodução em qualquer meio, desde que o trabalho original seja devidamente citado e não seja utilizado para fins comerciais.
-
 ## Contato
 
-Para mais informações, contate o professor responsável [Nome do Professor] através do e-mail [e-mail].
+Para mais informações, contate o professor responsável Herysson R. Figueiredo através do e-mail herysson.figueiredo@ufn.edu.br.
