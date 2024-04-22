@@ -1,4 +1,5 @@
 
+![Projeto de Software](https://github.com/Herysson/Projeto-de-Software/assets/7634437/324619f4-2b73-46a7-8bec-c73a932516d9)
 
 # Projeto de Software
 Projeto de software é uma fase crítica no desenvolvimento de sistemas de software, envolvendo a criação de planos e especificações que definem a arquitetura, componentes, interfaces e outras características essenciais de um sistema ou aplicação. Esta fase é orientada pelos requisitos coletados durante a análise de requisitos e serve como um guia para a implementação eficaz do software.
