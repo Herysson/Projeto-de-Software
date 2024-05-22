@@ -484,3 +484,6 @@ class ConcreteColleague2 extends Colleague {
 - "Head First Design Patterns" por Eric Freeman, Elisabeth Robson, Bert Bates e Kathy Sierra. 
 - "Patterns of Enterprise Application Architecture" por Martin Fowler. 
 - "Refactoring to Patterns" por Joshua Kerievsky.
+- **[Refactoring.Guru: Design Patterns](https://refactoring.guru/design-patterns)**
+
+
