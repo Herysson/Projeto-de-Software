@@ -58,8 +58,8 @@ Acesse o [site](https://jlog.org/rxtx.html) e faça download dos arquivos rxtxSe
 	<groupId>org.rxtx</groupId>
 	<artifactId>rxtx</artifactId>
 	<version>2.1.7</version>
-</dependency>
-</dependencies>
+        </dependency>
+    </dependencies>
 ```
 
 3. **Atualize o Maven**:
