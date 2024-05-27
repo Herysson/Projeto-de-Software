@@ -31,7 +31,9 @@ Bem-vindos à nossa aula prática sobre Comunicação Serial entre Java, Arduino
    - Enviar comandos e receber respostas do Arduino através da aplicação web.
 
 ## Hardware
-![arduino_led_circuit_pwm_pin](https://github.com/Herysson/Projeto-de-Software/assets/7634437/b9f943d0-44b3-4d27-ab24-a6555ca49d9b)
+<div align="center">
+  <img src="https://github.com/Herysson/Projeto-de-Software/assets/7634437/b9f943d0-44b3-4d27-ab24-a6555ca49d9b" alt="arduino_led_circuit_pwm_pin" width="400"/>
+</div>
 
 ## **Download dos Arquivos**
 
