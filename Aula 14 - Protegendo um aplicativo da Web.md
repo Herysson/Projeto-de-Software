@@ -1,6 +1,6 @@
 # Introdução à Segurança Web com Spring Security
 <p align="center">
-<img src="[URL_DA_IMAGEM](https://media.licdn.com/dms/image/C4E12AQG9PzLTPHvRVA/article-cover_image-shrink_600_2000/0/1615137890447?e=2147483647&v=beta&t=VWwwXtX-MnatXpTgypGqluwX50FTUyRTOaC7P12noBg)" alt="Spring Security">
+<img src="https://media.licdn.com/dms/image/C4E12AQG9PzLTPHvRVA/article-cover_image-shrink_600_2000/0/1615137890447?e=2147483647&v=beta&t=VWwwXtX-MnatXpTgypGqluwX50FTUyRTOaC7P12noBg" alt="Spring Security">
 </p>
 ### O que você irá construir
 Uma aplicação Spring MVC que protege uma página com um formulário de login suportado por uma lista fixa de usuários.
