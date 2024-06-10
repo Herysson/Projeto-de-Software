@@ -1,15 +1,17 @@
-### Introdução à Segurança Web com Spring Security
-
-#### O que você irá construir
+# Introdução à Segurança Web com Spring Security
+<p align="center">
+<img src="[URL_DA_IMAGEM](https://media.licdn.com/dms/image/C4E12AQG9PzLTPHvRVA/article-cover_image-shrink_600_2000/0/1615137890447?e=2147483647&v=beta&t=VWwwXtX-MnatXpTgypGqluwX50FTUyRTOaC7P12noBg)" alt="Spring Security">
+</p>
+### O que você irá construir
 Uma aplicação Spring MVC que protege uma página com um formulário de login suportado por uma lista fixa de usuários.
 
-#### Passos
 
-1. **Inicialize o Projeto**
+## **Inicialize o Projeto**
    - Use o [Spring Initializr](https://start.spring.io/) para configurar o projeto com dependências Spring Web e Thymeleaf.
    - Baixe e descompacte o arquivo ZIP resultante.
 
-2. **Crie uma Aplicação Web Não Segura**
+
+##  **Crie uma Aplicação Web Não Segura**
   Antes de aplicar segurança a uma aplicação web, você precisa de uma aplicação web para proteger. Esta seção guia você na criação de uma aplicação web simples. Em seguida, você a protegerá com o Spring Security na próxima seção.
 
   A aplicação web inclui duas views simples: uma página inicial e uma página "Hello, World". A página inicial é definida no seguinte template Thymeleaf (de src/main/resources/templates/home.html):
@@ -44,7 +46,7 @@ Essa visualização simples inclui um link para a página /hello, que é definid
 </html>
 ```
 
-3. **Configurar o Spring MVC**
+## **Configurar o Spring MVC**
 
 A aplicação web é baseada no Spring MVC. Portanto, é necessário configurar o Spring MVC e definir controladores de visualização para expor esses templates.
 A listagem a seguir (de src/main/java/com/example/securingweb/MvcConfig.java) mostra uma classe que configura o Spring MVC na aplicação:
@@ -73,7 +75,7 @@ O método `addViewControllers()` (que sobrescreve o método com o mesmo nome em 
 Dois dos controladores de visualização referenciam a view cujo nome é `home` (definida em `home.html`), e outro referencia a view chamada `hello` (definida em `hello.html`). 
 O quarto controlador de visualização referencia outra view chamada `login`.
 
-4. **Configure o Spring Security**
+## **Configure o Spring Security**
    - Adicione as dependências do Spring Security ao `build.gradle` ou `pom.xml`.
    - Crie uma configuração de segurança (`WebSecurityConfig.java`) para proteger a página `/hello`.
 
@@ -97,8 +99,7 @@ Com Maven, você precisa adicionar duas entradas extras (uma para a aplicação 
 </dependency>
 ```
    
-A aplicação web é baseada no Spring MVC. Portanto, é necessário configurar o Spring MVC e definir controladores de visualização para expor esses templates.
-A listagem a seguir (de src/main/java/com/example/securingweb/MvcConfig.java) mostra uma classe que configura o Spring MVC na aplicação:
+A seguinte configuração de segurança (de src/main/java/com/example/securingweb/WebSecurityConfig.java) garante que apenas usuários autenticados possam ver a saudação secreta:
 
 ```java
 package com.example.securingweb;
@@ -146,16 +147,72 @@ public class WebSecurityConfig {
 	}
 }
 ```
-A classe `WebSecurityConfig` é anotada com `@EnableWebSecurity` para habilitar o suporte à segurança web do Spring e fornecer a integração com o Spring MVC. Ela também expõe dois beans para definir alguns detalhes específicos da configuração de segurança web:
 
-- O bean `SecurityFilterChain` define quais caminhos de URL devem ser protegidos e quais não devem. Especificamente, os caminhos `/` e `/home` são configurados para não exigir autenticação. Todos os outros caminhos devem ser autenticados.
-  
-- Quando um usuário faz login com sucesso, ele é redirecionado para a página solicitada anteriormente que exigia autenticação. Há uma página de login personalizada `/login` (especificada por `loginPage()`) que todos podem visualizar.
 
-- O bean `UserDetailsService` configura um armazenamento de usuários em memória com um único usuário. Esse usuário tem o nome de usuário `user`, a senha `password` e o papel `USER`.
-  
+### **Anotações e Configuração Básica**
+```java
+@Configuration
+@EnableWebSecurity
+public class WebSecurityConfig {
+```
+- `@Configuration`: Indica que esta classe é uma classe de configuração Spring.
+- `@EnableWebSecurity`: Habilita a segurança web do Spring Security.
 
-5. **Adicione uma Página de Login**
+### **Configuração do Filtro de Segurança**
+```java
+@Bean
+public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+	http
+		.authorizeHttpRequests((requests) -> requests
+			.requestMatchers("/", "/home").permitAll()
+			.anyRequest().authenticated()
+		)
+		.formLogin((form) -> form
+			.loginPage("/login")
+			.permitAll()
+		)
+		.logout((logout) -> logout.permitAll());
+
+	return http.build();
+}
+```
+- `@Bean`: Define um bean gerenciado pelo Spring.
+- `securityFilterChain(HttpSecurity http)`: Método que configura a cadeia de filtros de segurança.
+
+### **Configurações Dentro do Método `securityFilterChain`**
+- `http.authorizeHttpRequests(...)`: Configura a autorização de requisições HTTP.
+  - `requestMatchers("/", "/home").permitAll()`: Permite acesso sem autenticação às URLs raiz (`/`) e `/home`.
+  - `anyRequest().authenticated()`: Exige autenticação para qualquer outra requisição.
+
+- `http.formLogin(...)`: Configura o formulário de login.
+  - `form.loginPage("/login").permitAll()`: Define a página de login personalizada em `/login` e permite acesso a todos.
+
+- `http.logout(...)`: Configura o logout.
+  - `logout.permitAll()`: Permite que todos os usuários acessem a funcionalidade de logout.
+
+- `return http.build()`: Constrói a cadeia de filtros de segurança configurada.
+
+**Serviço de Detalhes do Usuário**
+```java
+@Bean
+public UserDetailsService userDetailsService() {
+	UserDetails user =
+		 User.withDefaultPasswordEncoder()
+			.username("user")
+			.password("password")
+			.roles("USER")
+			.build();
+
+	return new InMemoryUserDetailsManager(user);
+}
+```
+- `userDetailsService()`: Método que define um serviço de detalhes do usuário.
+- `User.withDefaultPasswordEncoder()`: Cria um usuário com um codificador de senha padrão (para fins de demonstração, não recomendado para produção).
+- `.username("user").password("password").roles("USER").build()`: Define um usuário com nome de usuário "user", senha "password" e papel "USER".
+- `return new InMemoryUserDetailsManager(user)`: Retorna um `InMemoryUserDetailsManager` que gerencia usuários na memória.
+
+
+## **Adicione uma Página de Login**
    - Crie a view `login.html` que captura o nome de usuário e senha e envia para `/login`.
    - Atualize `hello.html` para exibir o nome do usuário atual e fornecer um formulário de logout.
   
@@ -209,7 +266,7 @@ Para fazer isso, atualize o hello.html para cumprimentar o usuário atual e cont
 Exibimos o nome de usuário utilizando a integração do Thymeleaf com o Spring Security. 
 O formulário "Sign Out" envia um POST para /logout. Ao sair com sucesso, o usuário é redirecionado para /login?logout.
 
-6. **Execute a Aplicação**
+## **Execute a Aplicação**
    - Execute a aplicação com Gradle (`./gradlew bootRun`) ou Maven (`./mvnw spring-boot:run`).
    - Acesse `http://localhost:8080`, faça login com `user` e `password`.
 
@@ -240,3 +297,21 @@ Alternativamente, pode construir o arquivo JAR com `./mvnw clean package` e, em 
 ```bash
 java -jar target/gs-securing-web-0.1.0.jar
 ```
+
+
+### Referências
+
+1. **Documentação Oficial do Spring Security**:
+   - [Spring Security Reference](https://docs.spring.io/spring-security/reference/index.html).
+
+2. **Guia de Início Rápido**:
+   - [Spring Security Quickstart](https://spring.io/guides/gs/securing-web/)
+
+3. **Livro**:
+   - "Spring Security in Action" por Laurentiu Spilca
+
+4. **Artigos e Tutoriais**:
+   - [Baeldung Spring Security Tutorials](https://www.baeldung.com/spring-security-tutorial)
+
+5. **Vídeos**:
+   - [Spring Security Playlist no YouTube](https://www.youtube.com/playlist?list=PLqq-6Pq4lTTZSKAFG6aCDVDP86Qx4lNas)
