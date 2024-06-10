@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulário de Cadastro com Bulma</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+</head>
+<body>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        RadEASKCalc.com
+      </h1>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <form th:action="@{/cadastrar}" th:object="${usuario}" method="post">
+          <h2 class="title">Cadastro de Usuário</h2>
+
+          <div class="field">
+            <label class="label" for="nome">Nome</label>
+            <div class="control">
+              <input class="input" type="text" id="nome" name="nome" th:field="*{nome}" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label" for="cpf">CPF</label>
+            <div class="control">
+              <input class="input" type="text" id="cpf" name="cpf" th:field="*{cpf}" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label" for="senha">Senha</label>
+            <div class="control">
+              <input class="input" type="password" id="senha" name="senha" th:field="*{senha}" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <button class="button is-primary" type="submit">Cadastrar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $(document).ready(function(){
+    $('#cpf').mask('000.000.000-00', {reverse: true});
+  });
+</script>
+</body>
+</html>
