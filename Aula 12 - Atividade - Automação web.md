@@ -225,10 +225,11 @@ public class ControlePorta {
 
    ```xml
    <dependency>
-       <groupId>org.rxtx</groupId>
-       <artifactId>rxtx</artifactId>
-       <version>2.2</version>
-   </dependency>
+	<groupId>org.rxtx</groupId>
+	<artifactId>rxtx</artifactId>
+	<version>2.1.7</version>
+        </dependency>
+    </dependencies>
    ```
 
 2. **Inicializar a Classe e Enviar Dados**:
