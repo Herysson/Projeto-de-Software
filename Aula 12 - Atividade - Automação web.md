@@ -90,10 +90,10 @@ void loop(){
   if(Serial.available() > 0){ // verifica se existe comunicação com a porta serial
     dado = Serial.read(); // lê os dados da porta serial
     switch(dado){
-      case 1:
+      case '1':
         digitalWrite(ledPin, HIGH); // liga o pino ledPin
         break;
-      case 2:
+      case '2':
         digitalWrite(ledPin, LOW); // desliga o pino ledPin
         break;
     }
@@ -240,9 +240,9 @@ public class ControlePorta {
        ControlePorta controle = new ControlePorta("COM3", 9600); // Substitua "COM3" pela sua porta COM
 
        // Enviar dados
-       controle.enviaDados(1); // Liga o LED
+       controle.enviaDados('1'); // Liga o LED
        try { Thread.sleep(2000); } catch (InterruptedException e) { e.printStackTrace(); }
-       controle.enviaDados(2); // Desliga o LED
+       controle.enviaDados('2'); // Desliga o LED
 
        // Fechar a porta
        controle.close();
