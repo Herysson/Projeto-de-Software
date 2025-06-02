@@ -32,7 +32,7 @@ Bem-vindos à nossa aula prática sobre Comunicação Serial entre Java, Arduino
 
 ## Hardware
 <div align="center">
-  <img src="https://github.com/Herysson/Projeto-de-Software/assets/7634437/b9f943d0-44b3-4d27-ab24-a6555ca49d9b" alt="arduino_led_circuit_pwm_pin" width="400"/>
+  <img src="https://github.com/user-attachments/assets/8d1b2baf-ae43-48ee-bce8-41e52b8b369b" alt="arduino_led_circuit_pwm_pin" />
 </div>
 
 ## **Download dos Arquivos**
