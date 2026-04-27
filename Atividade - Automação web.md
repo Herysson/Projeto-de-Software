@@ -190,11 +190,12 @@ A página principal do sistema deve exibir:
 
 | Critério | Peso |
 |---|---:|
-| Comunicação serial com o Arduino utilizando jSerialComm | 2,0 |
-| Funcionamento correto dos comandos de ligar e desligar LEDs | 3,0 |
+| Fazer o led ligar - desligar utilizando um servidor web | 2,0 |
+| Registrar o histórico no banco de dados | 2,0 |
 | Organização do projeto seguindo a arquitetura MVC | 2,0 |
-| Persistência do histórico no banco de dados | 1,5 |
-| Exibição do histórico em uma tabela na interface web | 1,5 |
+| Fazer a utilização correta da camada de serviço | 1,0 |
+| Exibição do histórico em uma tabela na interface web | 2 |
+| Feedback visual ao ligar - desligar o led | 1 |
 | **Total** | **10,0** |
 
 ---
