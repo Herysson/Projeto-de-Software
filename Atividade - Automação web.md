@@ -128,7 +128,10 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         ConexaoPorta conexao = new ConexaoPorta("COM3", 9600);
 
+        Thread.sleep(2000);
+
         conexao.enviaDados('1');
+
         Thread.sleep(2000);
 
         conexao.enviaDados('2');
