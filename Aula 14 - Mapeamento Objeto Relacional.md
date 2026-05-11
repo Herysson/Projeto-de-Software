@@ -2,8 +2,6 @@
 
 # Aula – Mapeamento Objeto Relacional Spring JPA: Relacionamentos Unidirecionais
 
-Baseado no material anterior sobre anotações JPA, que apresenta `@Entity`, `@Table`, `@Id`, `@GeneratedValue`, `@Column`, `@Embedded`, `@Embeddable`, `@OneToMany`, `@ManyToOne`, `@ManyToMany`, `@OneToOne` e `@JoinColumn`. 
-
 ---
 
 # O que são relacionamentos unidirecionais?
