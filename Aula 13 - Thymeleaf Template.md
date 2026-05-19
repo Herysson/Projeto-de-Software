@@ -210,26 +210,40 @@ Arquivo: `src/main/resources/templates/fragments/layout.html`
 
 ```html
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(titulo, conteudo)">
+<html lang="pt-br"
+      xmlns:th="http://www.thymeleaf.org"
+      th:fragment="layout(titulo, conteudo)">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title th:text="${titulo}">Sistema Web</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 </head>
-<body class="bg-light">
+
+<body class="bg-light d-flex flex-column min-vh-100">
 
 <header th:replace="~{fragments/navbar :: navbar}"></header>
 
-<main class="container mt-5" th:replace="${conteudo}">
-    <p>Conteúdo principal</p>
-</main>
+<!-- ÁREA PRINCIPAL -->
+<div class="container py-4 flex-fill d-flex flex-column">
+
+    <main class="flex-fill d-flex flex-column"
+          th:replace="${conteudo}">
+
+        <p>Conteúdo principal</p>
+
+    </main>
+
+</div>
 
 <footer th:replace="~{fragments/footer :: footer}"></footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
 ```
