@@ -216,16 +216,13 @@ A página principal do sistema deve exibir:
 4. **Documentação oficial do Arduino**
    - Arduino. "Arduino Documentation". Disponível em: [https://www.arduino.cc/en/Guide](https://www.arduino.cc/en/Guide).
 
-5. **Documentação da biblioteca RXTX**
-   - RXTX. "RXTX Serial Communication API". Disponível em: [https://fizzed.com/oss/rxtx-for-java](https://fizzed.com/oss/rxtx-for-java). 
-
-6. **Tutorial: Java Simple Serial Connector (jSSC)**
+5. **Tutorial: Java Simple Serial Connector (jSSC)**
    - Java Simple Serial Connector (jSSC). "jSSC Documentation". Disponível em: [https://code.google.com/archive/p/java-simple-serial-connector/wikis/jSSC_examples.wiki](https://code.google.com/archive/p/java-simple-serial-connector/wikis/jSSC_examples.wiki). 
 
-7. **Site: Instructables - Projetos Arduino**
+6. **Site: Instructables - Projetos Arduino**
    - Instructables. "Arduino Projects". Disponível em: [https://www.instructables.com/howto/arduino/](https://www.instructables.com/howto/arduino/). 
 
-8. **Ferramenta: Fritzing**
+7. **Ferramenta: Fritzing**
    - Fritzing. "Fritzing Software". Disponível em: [http://fritzing.org/home/](http://fritzing.org/home/). 
 
 
