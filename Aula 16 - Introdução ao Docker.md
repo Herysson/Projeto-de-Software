@@ -1184,8 +1184,26 @@ aplicação rodando
 Depois disso, publicamos a imagem no Docker Hub e executamos a aplicação em uma VPS Linux Ubuntu.
 
 ---
+## 35. Fluxo completo resumido para alterações.
 
-## 35. Referências
+No PC:
+```bash
+.\mvnw.cmd clean package -DskipTests
+docker compose down
+docker compose up -d --build
+docker compose logs -f
+docker push herysson/sos-app:1.1
+```
+
+Na VPS:
+```bash
+docker compose down
+docker pull herysson/sos-app:1.1
+docker compose up -d
+docker compose logs -f
+```
+
+## 36. Referências
 
 - Repositório SpringDocker: https://github.com/Herysson/SpringDocker
 - Documentação Dockerfile: https://docs.docker.com/reference/dockerfile/
