@@ -376,7 +376,7 @@ Adicione o seguinte conteúdo:
 services:
   app:
     build: .
-    image: springdocker:dev
+    image: springdocker:1.0
     container_name: springdocker
     ports:
       - "8080:8080"
@@ -1192,13 +1192,13 @@ No PC:
 docker compose down
 docker compose up -d --build
 docker compose logs -f
-docker push herysson/sos-app:1.1
+docker push herysson/springdocker:1.0
 ```
 
 Na VPS:
 ```bash
 docker compose down
-docker pull herysson/sos-app:1.1
+docker pull herysson/springdocker:1.0
 docker compose up -d
 docker compose logs -f
 ```
