@@ -1,3 +1,5 @@
+<p align="center"><img src="https://github.com/user-attachments/assets/0ece992c-f159-4d86-bd25-75c4f7ba9ece" alt="image" width="400" /></p>
+
 # Aula: Dockerizando uma aplicação Spring Boot simples com Docker Compose
 
 ## 1. Objetivo da aula
